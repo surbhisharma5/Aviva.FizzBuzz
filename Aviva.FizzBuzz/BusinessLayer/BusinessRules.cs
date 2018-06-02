@@ -28,11 +28,7 @@
             }
             return list;
         }
-
-        /// <summary>
-        /// Function check for specific day
-        /// </summary>
-        /// <returns>return boolean value</returns>
+       
         public bool IsSpecificDay()
         {
             return DateTime.Today.DayOfWeek == DayOfWeek.Wednesday;
