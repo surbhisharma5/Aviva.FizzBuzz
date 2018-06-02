@@ -16,8 +16,6 @@ namespace Aviva.FizzBuzz.Controllers
             _fizzbuzz = fizzBuzz;
         }
 
-
-        // GET: FizzBuzz
         public ActionResult FizzBuzzView()
         {
             return View("FizzBuzzView", new FizzBuzzModel());
