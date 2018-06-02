@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Aviva.FizzBuzz.Interface;
-using Aviva.FizzBuzz.Models;
-
-namespace Aviva.FizzBuzz.Controllers
+﻿namespace Aviva.FizzBuzz.Controllers
 {
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+    using Aviva.FizzBuzz.Interface;
+    using Aviva.FizzBuzz.Models;
+
     public class FizzBuzzController : Controller
     {
         private readonly IBusinessRules _businessrules;
