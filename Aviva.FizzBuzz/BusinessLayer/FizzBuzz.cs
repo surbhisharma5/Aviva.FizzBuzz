@@ -20,7 +20,6 @@
             _sMessage = isSpecificDay ? "Wizz Wuzz" : "Fizz Buzz";
         }
     }
-
  
     public class Fizz : IFizzBuzz
     {

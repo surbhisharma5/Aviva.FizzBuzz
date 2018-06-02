@@ -9,60 +9,62 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    @using (Html.BeginForm("getData", "FizzBuzz"))
+@using (Html.BeginForm("getData", "FizzBuzz"))
+{
+    <div>
+        <fieldset>
+            <table>
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(m => m.Number)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(m => m.Number)
+                            @Html.ValidationMessageFor(m => m.Number)
+                        </div>
+                    </td>
+                    <td>
+                        <input type="submit" name="DisplayList" value="Display List" class="button"/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+
+    if (Model.FizzBuzzList != null && Model.FizzBuzzList.Count > 0)
     {
-        <div>
+        <div id="DvGrid">
             <fieldset>
-                <table>
+                <table id="Grid">
+                    <thead>
                     <tr>
-                        <td>
-                            <div class="editor-label">
-                                @Html.LabelFor(m => m.Number)
-                            </div>
-                        </td>
-                        <td>
-                            <div class="editor-field">
-                                @Html.TextBoxFor(m => m.Number)
-                                @Html.ValidationMessageFor(m => m.Number)
-                            </div>
-                        </td>
-                        <td><input type="submit" name="DisplayList" value="Display List" class="button" /></td>
+                        <th> Output </th>
                     </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach (var number in Model.FizzBuzzList)
+                    {
+                        <tr>
+                            @if (string.IsNullOrEmpty(number.MessageColor))
+                            {
+                                <td class="@number">@number.Message</td>
+                            }
+                            else
+                            {
+                                <td style="color: @number.MessageColor" class="@number">@number.Message</td>
+                            }
+
+                        </tr>
+                    }
+                    </tbody>
                 </table>
             </fieldset>
         </div>
-
-        if (Model.FizzBuzzList != null && Model.FizzBuzzList.Count > 0)
-        {
-            <div id="DvGrid">
-                <fieldset>
-                    <table id="Grid">
-                        <thead>
-                            <tr>
-                                <th>  Output </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach (var number in Model.FizzBuzzList)
-                            {
-                                <tr>
-                                    @if (string.IsNullOrEmpty(number.MessageColor))
-                                    {
-                                        <td class="@number">@number.Message</td>
-                                    }
-                                    else
-                                    {
-                                        <td style="color:@number.MessageColor" class="@number">@number.Message</td>
-                                    }
-
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </fieldset>
-            </div>
-        }
     }
+}
 </body>
 </html>
