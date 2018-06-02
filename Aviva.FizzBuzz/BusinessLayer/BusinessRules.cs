@@ -12,7 +12,6 @@
             List<IFizzBuzz> list = new List<IFizzBuzz>();
             for (var counter = 1; counter <= number; counter++)
             {
-                //Get the class instance if num is divisiable
                 var inputnumber = counter;
                 IEnumerable<IFizzBuzz> data = listFizzBuzz.Where(x => x.IsDivisible(inputnumber));
                 if (data.ToList().Count > 0)
