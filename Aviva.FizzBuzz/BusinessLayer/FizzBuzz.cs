@@ -4,7 +4,6 @@
 
     public class FizzBuzz : IFizzBuzz
     {
-       
         public bool IsDivisible(int number)
         {
             return ((number % 3) == 0 && (number % 5) == 0);
@@ -38,11 +37,9 @@
             _sMessage = isSpecificDay ? "Wizz" : "Fizz";
         }
     }
-
    
     public class Buzz : IFizzBuzz
     {
-        
         public bool IsDivisible(int number)
         {
             return (number % 5) == 0;
