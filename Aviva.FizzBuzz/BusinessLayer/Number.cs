@@ -4,7 +4,6 @@
 
     public class Number : IFizzBuzz
     {
-
         public Number(int number) { Message = number.ToString(); }
 
         public bool IsDivisible(int number)
